@@ -9,7 +9,7 @@ public class DestroyOnTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Ammus")
+        if (other.gameObject.tag == "Player")
 
         Instantiate(effect, objToDestroy.transform.position, objToDestroy.transform.rotation);
             Destroy(objToDestroy);
