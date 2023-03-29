@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Coinss : MonoBehaviour
 {
     public int Pisteet = 0;
