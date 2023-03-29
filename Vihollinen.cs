@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class Vihollinen : MonoBehaviour
 {
-    public GameObject objToDestroy;
-    public GameObject effect;
+    public GameObject vihollinen;
 
      void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Ammus")
         {
-            Instantiate(effect, objToDestroy.transform.position, objToDestroy.transform.rotation);
-            Destroy(objToDestroy);
-            Destroy(gameObject);
+            Destroy(vihollinen);
         }
-    }
+     }
 }
