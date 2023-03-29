@@ -16,6 +16,7 @@ public class Finish : MonoBehaviour
         {
             uiObject.SetActive(true);
             StartCoroutine("WaitForSec");
+            StartCoroutine("Restart");
         }          
     }
     IEnumerator WaitForSec()
@@ -23,6 +24,14 @@ public class Finish : MonoBehaviour
         yield return new WaitForSeconds(10);
         Destroy(uiObject);
         Destroy(gameObject);
+    }
+    
+    IEnumerator Restart()
+    {
+        yield return new WaitForSeconds(10);
+        Destroy(uiObject);
+        Destroy(gameObject);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
 
