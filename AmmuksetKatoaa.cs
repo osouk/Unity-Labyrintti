@@ -8,9 +8,9 @@ public class AmmuksetKatoaa : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine("WaitForSec");
+        StartCoroutine("Odota");
     }
-    IEnumerator WaitForSec()
+    IEnumerator Odota()
     {
         yield return new WaitForSeconds(2);
         Destroy(Ammus);
