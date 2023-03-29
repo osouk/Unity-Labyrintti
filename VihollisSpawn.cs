@@ -23,6 +23,5 @@ public class VihollisSpawn : MonoBehaviour
             Instantiate(Vihu, SpawnPosition.position, Quaternion.identity);
             Destroy(Spawner);
         }
-
     }
 }
