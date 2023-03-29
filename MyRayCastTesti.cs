@@ -2,25 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public class MyRayCastTesti : RayCastTesti
-{
-    bool beingCarried = false;
-    private bool touched = false;
-
+{   
     public float throwForce = 200;
-
-   
-
+    
     private GameObject Target;
-    public Transform kasi;
+   // public Transform kasi;
     public Transform kasi2;
     private GameObject Napattu = null;
+    
+    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (Target != null && Napattu == null)
             {
-                Target.transform.position = kasi.position;
+                Target.transform.position = kasi2.position;
                 Napattu = Target;
                 Rigidbody RB = Target.GetComponent<Rigidbody>();
                 RB.useGravity = false;
@@ -50,7 +47,7 @@ public class MyRayCastTesti : RayCastTesti
 
         if (Napattu)
         {
-            Napattu.transform.position = kasi.position;
+            Napattu.transform.position = kasi2.position;
         }
     }
     void FixedUpdate()
