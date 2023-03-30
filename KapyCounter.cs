@@ -14,7 +14,7 @@ public class KapyCounter : MonoBehaviour
 
     private void Update()
     {
-        if (C.Pisteet >= 2)
+        if (C.Pisteet >= 5)
         {
             Destroy(RemoveObj);
         }
