@@ -48,6 +48,8 @@ public class Pelaaja : MonoBehaviour
         float x2 = Input.GetAxis("Horizontal2");
         float z2 = Input.GetAxis("Vertical2");
         Vector3 suunta = transform.forward * z + transform.right * x;
-        rb.velocity = suunta * Speed;
+        suunta.y = 0;
+            rb.AddForce(suunta * Speed * Time.fixedDeltaTime);
+        rb.velocity.Normalize();
     }
 }
