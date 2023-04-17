@@ -10,17 +10,27 @@ public class VihollisSpawn : MonoBehaviour
 
     private void OnTriggerEnter(Collider player)
     {
-        if(player.gameObject.tag == "Player")
+        if (player.gameObject.tag == "Player")
         {
+
             StartCoroutine(LuoVihollinen());
         }
     }
     IEnumerator LuoVihollinen()
     {
-        yield return new WaitForSeconds(3f);
-        for (int i = 0; i < 2; i++)
+        yield return new WaitForSeconds(2f);
+        for (int i = 0; i < 1; i++)
         {
             Instantiate(Vihu, SpawnPosition.position, Quaternion.identity);
+            StartCoroutine(RikoOhjeet());
+        }
+    }
+
+    IEnumerator RikoOhjeet()
+    {
+        yield return new WaitForSeconds(4f);
+        for (int i = 0; i < 1; i++)
+        {
             Destroy(Spawner);
         }
     }
