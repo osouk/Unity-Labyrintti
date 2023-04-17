@@ -14,6 +14,15 @@ public class AmmuksetKatoaa : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         Destroy(Ammus);
+    }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        Debug.Log(other.gameObject.name);
+        if(other.gameObject.tag == "Vihollinen")
+        {
+            Destroy(other.gameObject);
+        }
+        Destroy(gameObject);
     }
 }
