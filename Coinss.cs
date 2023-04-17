@@ -30,9 +30,10 @@ public class Coinss : MonoBehaviour
 
     private void Update()
     {
-        if(Pisteet >= 5)
+        if(Pisteet == 5)
         {
-            uiObject3.SetActive(false);
+            StartCoroutine(odota2());
+            Destroy(uiObject3);
             uiObject2.SetActive(true);
             if (!alreadyPlayed)
             {
@@ -40,16 +41,16 @@ public class Coinss : MonoBehaviour
                 alreadyPlayed = true;
             }
         }
-        else
-        {           
+        else if(Pisteet < 5)
+        {
             uiObject3.SetActive(true);
-        }
+        }       
 
-      /*  if(Pisteet == 8)
+        if(Pisteet == 8)
         {
             uiObject.SetActive(true);
             StartCoroutine("odota");
-        } */
+        } 
     }
 
     IEnumerator odota()
