@@ -12,7 +12,7 @@ public class Ohjeet : MonoBehaviour
     }
     IEnumerator WaitForSec()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(15);
         Destroy(uiObject);
        
     }
