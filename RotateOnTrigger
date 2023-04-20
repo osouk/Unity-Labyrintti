@@ -1,0 +1,13 @@
+using UnityEngine;
+
+public class RotateObject : MonoBehaviour
+{
+    public float speed = 10f; // Rotation speed
+
+    // Update is called once per frame
+    void Update()
+    {
+        // Rotate object around its local Y-axis
+        transform.Rotate(Vector3.up, speed * Time.deltaTime);
+    }
+}
