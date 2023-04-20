@@ -1,0 +1,21 @@
+public class MoveOnTrigger : MonoBehaviour
+{
+    public float moveSpeed = 10f; // Speed at which the object moves
+    private bool triggered = false; // Whether the object has collided with the trigger
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Trigger") && !triggered)
+        {
+            triggered = true;
+        }
+    }
+
+    private void Update()
+    {
+        if (triggered)
+        {
+            transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+        }
+    }
+}
